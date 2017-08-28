@@ -1,0 +1,50 @@
+// Place your settings in this file to overwrite default and user settings.
+{
+    "markdown.extension.convertToHtml.reportSuccess": false,
+    "markdown.extension.convertToHtml.embedCss": false,
+    "markdown.extension.convertToHtml.tocIncludeLevels": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+    ],
+    "markdown.extension.convertToHtml.options.allowHTML": true,
+    "markdown.extension.convertToHtml.options.linkify": false,
+    "markdown.extension.convertToHtml.options.br": true,
+    "markdown.extension.convertToHtml.options.additionalPlugins": {
+        "absolutePath": "/app/nodejs.markdown-it-plugins/node_modules",
+        "relativePath": "", // relative to workspace
+        "plugins": [
+            {
+                "name": "markdown-it-attrs",
+                "enable": true,
+                "syntacticDecorators": [
+                    { // for "id" attribute {id=...}:
+                        "enable": true,
+                        "regexString": "\\{id|class\\=([^\\s]+?)\\}",
+                        "tooltipFormat": "id=\"%s\"",
+                        "style": {
+                            "cursor": "pointer",
+                            "color": "black",
+                            "backgroundColor": "rgba(100,0,200,0.1)",
+                            "border": "solid thin black"
+                        }
+                    },
+                    { // for "class" attribute {.class-name}:
+                        "enable": true,
+                        "regexString": "\\{\\.([^\\s]+?)\\}",
+                        "tooltipFormat": "CSS class: \"%s\"",
+                        "style": {
+                            "cursor": "copy",
+                            "color": "darkBlue",
+                            "backgroundColor": "rgba(200,50,200,0.2)",
+                            "border": "solid thin black"
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}

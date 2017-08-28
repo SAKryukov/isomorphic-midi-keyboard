@@ -1,0 +1,16 @@
+data
+*.log
+bin
+bin.*
+obj
+obj.*
+Debug
+Release
+ipch
+*.suo
+*.user
+*.sln.cache
+*.sdf
+*.VC.opendb
+*.layout
+*.depend

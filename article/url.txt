@@ -1,0 +1,26 @@
+﻿https://en.wikipedia.org/wiki/General_MIDI
+https://www.midi.org/specifications/item/table-1-summary-of-midi-message
+
+https://en.wikipedia.org/wiki/Mode_(music)
+https://en.wikipedia.org/wiki/Degree_(music)
+7th: in chords, B♭
+
+https://en.wikipedia.org/wiki/Ionian_mode
+Ionian C D E F G A B (си)
+https://en.wikipedia.org/wiki/Mixolydian_mode
+Mixolidian C D E F G A B♭ (♭си), 'angelical'
+
+(Hypomixolydian is considered perfect; D E F G ("final") A B C:
+https://en.wikipedia.org/wiki/Gregorian_mode#Tonality
+https://en.wikipedia.org/wiki/Mode_%28music%29#Western_Church
+https://en.wikipedia.org/wiki/Mode_%28music%29#Use ("perfect", "angelical")
+
+Isomorphic keyboard:
+https://en.wikipedia.org/wiki/Isomorphic_keyboard
+Jankó keyboard:
+https://en.wikipedia.org/wiki/Jank%C3%B3_keyboard
+Jammer:
+https://en.wikipedia.org/wiki/Jammer_keyboard
+
+Major keyboard problem: rollover:
+https://en.wikipedia.org/wiki/Rollover_%28key%29

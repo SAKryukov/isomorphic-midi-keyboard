@@ -1,0 +1,209 @@
+﻿<Window x:Class="WPF.Ui.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:semantic="clr-namespace:WPF.Controls"
+	FontFamily="Verdana" FontSize="11"
+	WindowStartupLocation="CenterScreen"
+    Title="MainWindow" SizeToContent="WidthAndHeight" ResizeMode="NoResize">
+	<Window.Resources>
+		<ResourceDictionary>
+			<Thickness x:Key="marginInRow">8 0 0 4</Thickness>
+			<Thickness x:Key="marginInColumn">0 4 0 0</Thickness>
+			<Thickness x:Key="marginSliders">12 8 12 8</Thickness>
+			<Thickness x:Key="marginChords">12 8 0 8</Thickness>
+			<Thickness x:Key="marginChordTitle">0 0 0 0</Thickness>
+			<Thickness x:Key="borderThicknessChords">0.4 0 0 0</Thickness>
+			<Thickness x:Key="paddingButton">8 3 8 3</Thickness>
+			<Thickness x:Key="marginVisualizationOptions">12 0 0 4</Thickness>
+			<Thickness x:Key="marginKeyboardTabContent">12 8 12 8</Thickness>
+			<Thickness x:Key="paddingChordPresets">12 8 12 8</Thickness>
+			<Thickness x:Key="marginBottomLeft">12 0 0 16</Thickness>
+			<Thickness x:Key="marginOption">0 0 0 4</Thickness>
+			<Thickness x:Key="marginOptionSeparated">0 24 0 4</Thickness>
+			<Thickness x:Key="marginHelp">12 0 0 0</Thickness>
+			<Thickness x:Key="marginChordPanelPresets">0 0 12 0</Thickness>
+			<Thickness x:Key="marginChordPresetsTitle">0 0 8 0</Thickness>
+		</ResourceDictionary>
+	</Window.Resources>
+	<Window.InputBindings>
+		<KeyBinding Key="F1" Command="ApplicationCommands.Help"/>
+	</Window.InputBindings>
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+		</Grid.RowDefinitions>
+		<TabControl Grid.Row="0" >
+			<TabItem Header="_Instruments">
+				<Grid x:Name="gridInstruments">
+				</Grid>
+			</TabItem>
+			<TabItem Header="_Keyboard">
+				<Grid x:Name="gridKeyboard" Margin="0">
+					<Grid Margin="{StaticResource marginKeyboardTabContent}">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="*"/>
+							<ColumnDefinition Width="Auto"/>
+						</Grid.ColumnDefinitions>
+						<Grid Grid.Column="0">
+							<Canvas x:Name="canvasKeyboard"/>
+						</Grid>
+						<StackPanel Grid.Column="1" Orientation="Vertical" Margin="{StaticResource marginVisualizationOptions}">
+							<RadioButton x:Name="radioShowNotes" Margin="{StaticResource marginOption}">Show Notes</RadioButton>
+							<RadioButton x:Name="radioShowMidiNotes" Margin="{StaticResource marginOption}">Show MIDI Notes</RadioButton>
+							<CheckBox x:Name="checkBoxShowCharacters" Margin="{StaticResource marginOption}">Show Characters</CheckBox>
+							<CheckBox x:Name="checkBoxHighlightChords" IsChecked="True" Margin="{StaticResource marginOptionSeparated}">Highlight Chords</CheckBox>
+							<CheckBox x:Name="checkBoxHighlightChordsWithLabels" IsChecked="True" IsEnabled="{Binding Path=IsChecked, ElementName=checkBoxHighlightChords}" Margin="{StaticResource marginOption}">+ Chords Notes</CheckBox>
+						</StackPanel>
+					</Grid>
+				</Grid>
+			</TabItem>
+		</TabControl>
+
+
+		<Grid Grid.Row="1">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*"/>
+				<ColumnDefinition Width="Auto"/>
+				<ColumnDefinition Width="Auto"/>
+			</Grid.ColumnDefinitions>
+
+			<DockPanel LastChildFill="True">
+
+				<Grid DockPanel.Dock="Top" Margin="{StaticResource marginSliders}">
+					<Grid.RowDefinitions>
+						<RowDefinition Height="Auto"/>
+						<RowDefinition Height="Auto"/>
+						<RowDefinition Height="Auto"/>
+						<RowDefinition Height="Auto"/>
+					</Grid.RowDefinitions>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="Auto" />
+						<ColumnDefinition Width="*" />
+						<ColumnDefinition Width="Auto" />
+						<ColumnDefinition Width="Auto" />
+					</Grid.ColumnDefinitions>
+					<Label Grid.Row="0" Grid.Column="0" Target="{Binding ElementName=sliderTone}">Transp_osition:</Label>
+					<Label Grid.Row="1" Grid.Column="0" Target="{Binding ElementName=sliderOnVelocity}">Vol_ume:</Label>
+					<Label Grid.Row="2" Grid.Column="0" Target="{Binding ElementName=sliderOnPedalVelocity}">Volume with _Pedal (Shift+):</Label>
+					<Slider x:Name="sliderTransposition" Grid.Row="0" Grid.Column="1" Minimum="0" Maximum="255" SmallChange="1" LargeChange="2" />
+					<TextBlock x:Name="sliderToneValue" Grid.Row="0" Grid.Column="2" Margin="{StaticResource marginInRow}">-2313</TextBlock>
+					<Button x:Name="buttonToneReset" Grid.Row="0" Grid.Column="3" Margin="{StaticResource marginInRow}" Padding="{StaticResource paddingButton}">Reset</Button>
+					<Slider x:Name="sliderOnVelocity" Grid.Row="1" Grid.Column="1" Minimum="0" Maximum="127" SmallChange="1" LargeChange="8" />
+					<TextBlock x:Name="sliderOnVelocityValue" Grid.Row="1" Grid.Column="2" Margin="{StaticResource marginInRow}">-2313</TextBlock>
+					<Button x:Name="buttonOnVelocityReset" Grid.Row="1" Grid.Column="3" Margin="{StaticResource marginInRow}" Padding="{StaticResource paddingButton}">Reset</Button>
+					<Slider x:Name="sliderOnPedalVelocity" Grid.Row="2" Grid.Column="1" Minimum="0" Maximum="127" SmallChange="1" LargeChange="8" />
+					<TextBlock x:Name="sliderOnPedalVelocityValue" Grid.Row="2" Grid.Column="2" Margin="{StaticResource marginInRow}">-2313</TextBlock>
+					<Button x:Name="buttonOnPedalVelocityReset" Grid.Row="2" Grid.Column="3" Margin="{StaticResource marginInRow}" Padding="{StaticResource paddingButton}">Reset</Button>
+				</Grid>
+				<Grid Margin="{StaticResource marginBottomLeft}">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="Auto"/>
+						<ColumnDefinition Width="Auto"/>
+						<ColumnDefinition Width="*"/>
+					</Grid.ColumnDefinitions>
+					<Button Grid.Column="0" Height="{Binding Path=ActualHeight, ElementName=buttonOnPedalVelocityReset}" HorizontalAlignment="Left" VerticalAlignment="Bottom" x:Name="buttonResetAll" Padding="{StaticResource paddingButton}">Reset All</Button>
+					<Button BorderThickness="0" Grid.Column="1" x:Name="buttonHelp" VerticalAlignment="Bottom" Background="Yellow" Width="{Binding Path=ActualHeight, ElementName=buttonResetAll}" Height="{Binding Path=ActualHeight, ElementName=buttonResetAll}" Margin="{StaticResource marginHelp}">F1</Button>
+					<StackPanel Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Bottom" Orientation="Horizontal">
+						<RadioButton x:Name="radioIsWickiHayden">Wicki-Ha_yden</RadioButton>
+						<RadioButton Margin="{StaticResource marginInRow}">Ja_nkó</RadioButton>
+					</StackPanel>
+				</Grid>
+			</DockPanel>
+			<Border Grid.Column="1" BorderBrush="Black" BorderThickness="{StaticResource borderThicknessChords}" Background="{DynamicResource {x:Static SystemColors.MenuBrushKey}}">
+				<Grid Margin="{StaticResource marginChords}">
+					<Grid x:Name="gridChords">
+						<Grid.RowDefinitions>
+							<RowDefinition Height="Auto"/>
+							<RowDefinition Height="Auto"/>
+							<RowDefinition Height="Auto"/>
+							<RowDefinition Height="Auto"/>
+							<RowDefinition Height="Auto"/>
+							<RowDefinition Height="Auto"/>
+							<RowDefinition Height="Auto"/>
+						</Grid.RowDefinitions>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="Auto"/>
+							<ColumnDefinition Width="Auto"/>
+							<ColumnDefinition Width="Auto"/>
+							<ColumnDefinition Width="Auto"/>
+							<ColumnDefinition Width="Auto"/>
+							<ColumnDefinition Width="Auto"/>
+							<ColumnDefinition Width="Auto"/>
+							<ColumnDefinition Width="Auto"/>
+						</Grid.ColumnDefinitions>
+						<TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3">Chords (Ctrl+note):</TextBlock>
+						<TextBlock Grid.Row="0" Grid.Column="4" Grid.ColumnSpan="2">Inversions:</TextBlock>
+						<Button Grid.Row="0" Grid.Column="6" HorizontalAlignment="Right" x:Name="buttonResetChords" Padding="{StaticResource paddingButton}">Reset</Button>
+						<semantic:ChordNoteRadioButton Grid.Row="1" Grid.Column="0" GroupName="degree13" IsChecked="True" Shift="0">x</semantic:ChordNoteRadioButton>
+						<semantic:ChordNoteRadioButton Grid.Row="1" Grid.Column="1" GroupName="degree13" Shift="20" Changer="{Binding ElementName=cb13div2}" BigChanger="{Binding ElementName=cb13div4}">13−</semantic:ChordNoteRadioButton>
+						<semantic:ChordNoteRadioButton Grid.Row="1" Grid.Column="2" GroupName="degree13" Shift="21" Changer="{Binding ElementName=cb13div2}" BigChanger="{Binding ElementName=cb13div4}">13</semantic:ChordNoteRadioButton>
+						<semantic:ChordNoteRadioButton Grid.Row="2" Grid.Column="0" GroupName="degree11" IsChecked="True" Shift="0">x</semantic:ChordNoteRadioButton>
+						<semantic:ChordNoteRadioButton Grid.Row="2" Grid.Column="2" GroupName="degree11" Shift="17" Changer="{Binding ElementName=cb11div2}" BigChanger="{Binding ElementName=cb11div4}">11</semantic:ChordNoteRadioButton>
+						<semantic:ChordNoteRadioButton Grid.Row="2" Grid.Column="3" GroupName="degree11" Shift="18" Changer="{Binding ElementName=cb11div2}" BigChanger="{Binding ElementName=cb11div4}">11+</semantic:ChordNoteRadioButton>
+						<semantic:ChordNoteRadioButton Grid.Row="3" Grid.Column="0" GroupName="degree9" IsChecked="True" Tag="D1" Shift="0">x</semantic:ChordNoteRadioButton>
+						<semantic:ChordNoteRadioButton Grid.Row="3" Grid.Column="1" GroupName="degree9" Tag="D2" Shift="13" Changer="{Binding ElementName=cb9div2}" BigChanger="{Binding ElementName=cb9div4}">9−</semantic:ChordNoteRadioButton>
+						<semantic:ChordNoteRadioButton Grid.Row="3" Grid.Column="2" GroupName="degree9" Tag="D3" Shift="14" Changer="{Binding ElementName=cb9div2}" BigChanger="{Binding ElementName=cb9div4}">9</semantic:ChordNoteRadioButton>
+						<semantic:ChordNoteRadioButton Grid.Row="3" Grid.Column="3" GroupName="degree9" Tag="D4" Shift="15" Changer="{Binding ElementName=cb9div2}" BigChanger="{Binding ElementName=cb9div4}">9+</semantic:ChordNoteRadioButton>
+						<semantic:ChordNoteRadioButton Grid.Row="4" Grid.Column="0" GroupName="degree67" Tag="Q" IsChecked="True" Shift="0">x</semantic:ChordNoteRadioButton>
+						<semantic:ChordNoteRadioButton Grid.Row="4" Grid.Column="1" GroupName="degree67" Tag="W" Shift="9" Changer="{Binding ElementName=cb7div2}">6</semantic:ChordNoteRadioButton>
+						<semantic:ChordNoteRadioButton Grid.Row="4" Grid.Column="2" GroupName="degree67" Tag="E" Shift="10" Changer="{Binding ElementName=cb7div2}">7</semantic:ChordNoteRadioButton>
+						<semantic:ChordNoteRadioButton Grid.Row="4" Grid.Column="3" GroupName="degree67" Tag="R" Shift="11" Changer="{Binding ElementName=cb7div2}">7+</semantic:ChordNoteRadioButton>
+						<semantic:ChordNoteRadioButton Grid.Row="5" Grid.Column="1" GroupName="degree5" Tag="A" Shift="6" Changer="{Binding ElementName=cb5div2}">5−</semantic:ChordNoteRadioButton>
+						<semantic:ChordNoteRadioButton Grid.Row="5" Grid.Column="2" GroupName="degree5" IsChecked="True" Tag="S" Shift="7" Changer="{Binding ElementName=cb5div2}">5</semantic:ChordNoteRadioButton>
+						<semantic:ChordNoteRadioButton Grid.Row="5" Grid.Column="3" GroupName="degree5" Tag="D" Shift="8" Changer="{Binding ElementName=cb5div2}">5+</semantic:ChordNoteRadioButton>
+						<semantic:ChordNoteRadioButton Grid.Row="6" Grid.Column="0" GroupName="degree234" Tag="Z" Shift="2" Changer="{Binding ElementName=cb234div2}">2</semantic:ChordNoteRadioButton>
+						<semantic:ChordNoteRadioButton Grid.Row="6" Grid.Column="1" GroupName="degree234" Tag="X" Shift="3" Changer="{Binding ElementName=cb234div2}">m</semantic:ChordNoteRadioButton>
+						<semantic:ChordNoteRadioButton Grid.Row="6" Grid.Column="2" GroupName="degree234" Tag="C" Shift="4" IsChecked="True" Changer="{Binding ElementName=cb234div2}">3</semantic:ChordNoteRadioButton>
+						<semantic:ChordNoteRadioButton Grid.Row="6" Grid.Column="3" GroupName="degree234" Tag="V" Shift="5" Changer="{Binding ElementName=cb234div2}">4</semantic:ChordNoteRadioButton>
+						<CheckBox Name="cb13div2" Grid.Row="1" Grid.Column="4">/ 2</CheckBox>
+						<CheckBox Name="cb13div4" Grid.Row="1" Grid.Column="5">/ 4</CheckBox>
+						<CheckBox Name="cb11div2" Grid.Row="2" Grid.Column="4">/ 2</CheckBox>
+						<CheckBox Name="cb11div4" Grid.Row="2" Grid.Column="5">/ 4</CheckBox>
+						<CheckBox Name="cb9div2" Grid.Row="3" Grid.Column="4" Tag="D5">/ 2</CheckBox>
+						<CheckBox Name="cb9div4" Grid.Row="3" Grid.Column="5" Tag="D6">/ 4</CheckBox>
+						<CheckBox Name="cb7div2" Grid.Row="4" Grid.Column="4" Tag="T">/ 2</CheckBox>
+						<CheckBox Name="cb5div2" Grid.Row="5" Grid.Column="4" Tag="F">/ 2</CheckBox>
+						<CheckBox Name="cb234div2" Grid.Row="6" Grid.Column="4" Tag="B">/ 2</CheckBox>
+						<TextBlock Grid.Row="3" Grid.Column="6" HorizontalAlignment="Right">Alt+(123456)</TextBlock>
+						<TextBlock Grid.Row="4" Grid.Column="6" HorizontalAlignment="Right">Alt+(WQERT)</TextBlock>
+						<TextBlock Grid.Row="5" Grid.Column="6" HorizontalAlignment="Right">Alt+(ASDF)</TextBlock>
+						<TextBlock Grid.Row="6" Grid.Column="6" HorizontalAlignment="Right">Alt+(ZXCVB)</TextBlock>
+					</Grid>
+				</Grid>
+			</Border>
+			<Border Grid.Column="2" BorderBrush="Black" BorderThickness="{StaticResource borderThicknessChords}" Background="{DynamicResource {x:Static SystemColors.MenuBrushKey}}" Padding="{StaticResource paddingChordPresets}">
+				<Grid>
+					<Grid.RowDefinitions>
+						<RowDefinition Height="{Binding Path=ActualHeight, ElementName=gridChords}"/>
+					</Grid.RowDefinitions>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="Auto"/>
+						<ColumnDefinition Width="Auto"/>
+					</Grid.ColumnDefinitions>
+					<Grid>
+						<Grid.RowDefinitions>
+							<RowDefinition Height="Auto"/>
+							<RowDefinition Height="*"/>
+						</Grid.RowDefinitions>
+						<TextBlock Margin="{StaticResource marginChordPresetsTitle}">Chord Presets:</TextBlock>
+						<StackPanel Grid.Row="1" VerticalAlignment="Bottom" Orientation="Vertical" Margin="{StaticResource marginChordPanelPresets}">
+							<Button x:Name="buttonAddChordPreset" Padding="{StaticResource paddingButton}" Margin="{StaticResource marginInColumn}">Add</Button>
+							<Button x:Name="buttonInsertChordPreset" Padding="{StaticResource paddingButton}" Margin="{StaticResource marginInColumn}">Insert</Button>
+							<Button x:Name="buttonRemoveChordPreset" Padding="{StaticResource paddingButton}" Margin="{StaticResource marginInColumn}">Remove</Button>
+							<Button x:Name="buttonResetChordPreset" Padding="{StaticResource paddingButton}" Margin="{StaticResource marginInColumn}">Reset</Button>
+						</StackPanel>
+					</Grid>
+					<ListBox x:Name="listBoxChordPresets" Grid.Column="1" Width="{Binding Path=ActualWidth, ElementName=buttonAddChordPreset}">
+						<ListBoxItem>7</ListBoxItem>
+						<ListBoxItem>minor</ListBoxItem>
+						<ListBoxItem>major</ListBoxItem>
+						<ListBoxItem>dim</ListBoxItem>
+						<ListBoxItem>5+</ListBoxItem>
+						<ListBoxItem>7+</ListBoxItem>
+					</ListBox>
+				</Grid>
+			</Border>
+		</Grid>
+	</Grid>
+</Window>
