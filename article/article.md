@@ -551,9 +551,23 @@ Some further ideas include
 - User-defined keyboard layouts. It can be useful for the users using the keyboard with physical layout different from en-US kinds of keyboard.  
 - Keyboard split. It would be possible to define one or more areas on the keyboard to be set up separately: for each area, the choice of instrument, volumes and transposition could be different.
 - MIDI recording. I'm not sure if it would be a valuable option or not. After all, the application cannot work as a serious musical instrument to really perform on it. Rather, it can be used as learning and experimenting tool.
-- Covering other alternative tone systems, such as [19-TET](https://en.wikipedia.org/wiki/19_equal_temperament) or [31-TET](https://en.wikipedia.org/wiki/31_equal_temperament) would be extremely interesting and fruitful.
+- Covering other alternative tone systems, such as [19-TET](https://en.wikipedia.org/wiki/19_equal_temperament) or [31-TET](https://en.wikipedia.org/wiki/31_equal_temperament) would be extremely interesting and fruitful (presently implemented; see [below](#heading.future-is-already-here)).
 - Another [microtonal](https://en.wikipedia.org/wiki/Microtonal_music) approach would be using [dynamic tonality](https://en.wikipedia.org/wiki/Dynamic_tonality) changing explicitly (with some additional controls) or on some triggers (appearance of certain chord or sequence during musical motion) based on preset created before performing.
-- Instead of .NET, using Web browser-implemented [Web Audio API](https://www.w3.org/TR/webaudio), for ultimate cross-platform compatibility. 
+- Instead of .NET, using Web browser-implemented [Web Audio API](https://www.w3.org/TR/webaudio), for ultimate cross-platform compatibility (presently implemented; see [below](#heading.future-is-already-here)).
+
+### Future is Already Here
+
+At the moment of writing, some of the plans mentioned above have been implemented. Next work on this topic is published in beta version. It is a pure in-browser HTML/JavaScript application, so anyone can [try it out](https://sakryukov.github.io/microtonal-chromatic-lattice-keyboard/index.html) without downloading. It addition to the present work, it is also ***microtonal*** and offers some interesting extras, such as tone/chord comparison for different tone systems. Surprisingly, due to the keyboard layout discussed above, basic playing skills acquired and techniques learned for one tone system are immediately applicable to other tone systems.
+
+The biggest part under development is the chord generation and visualization, similar. It will take more time. Certainly, it will be a topic of my next article. Most other features are fully functional at this moment.
+
+Presently, the following [tone systems](https://en.wikipedia.org/wiki/Musical_tuning) are supported:
+- [Just Intonation](https://en.wikipedia.org/wiki/Just_intonation) (only [presented](https://sakryukov.github.io/microtonal-chromatic-lattice-keyboard/tone-system-comparison/tone-system-comparison.html) on the [chromatic-circle](https://en.wikipedia.org/wiki/Chromatic_circle) keyboard)
+- [Common-practice](https://en.wikipedia.org/wiki/Common_practice_period) [12-TET](https://en.wikipedia.org/wiki/Equal_temperament)
+- [19-TET](https://en.wikipedia.org/wiki/19_equal_temperament)
+- [31-TET](https://en.wikipedia.org/wiki/31_equal_temperament).
+
+The entire project is [found on GitHub](https://github.com/SAKryukov/microtonal-chromatic-lattice-keyboard).
 
 ## Conclusions
 
