@@ -31,6 +31,11 @@ A computer keyboard can be turned into an isomorphic musical instrument, to help
 
 [](toc)
 
+This is the second article in the series dedicated to musical study using specialized keyboards based on the computer keyboard:
+
+1. Present article
+2. *[Microtonal Music Study with Chromatic Lattice Keyboard](https://www.codeproject.com/Articles/1204180/Microtonal-Music-Study-Chromatic-Lattice-Keyboard)*
+
 ## Insights
 
 Let's start with something simple. Let's say, we want to play with some sounds on a computer.
@@ -557,9 +562,7 @@ Some further ideas include
 
 ### Future is Already Here
 
-At the moment of writing, some of the plans mentioned above have been implemented. Next work on this topic is published in beta version. It is a pure in-browser HTML/JavaScript application, so anyone can [try it out](https://sakryukov.github.io/microtonal-chromatic-lattice-keyboard/index.html) without downloading. It addition to the present work, it is also ***microtonal*** and offers some interesting extras, such as tone/chord comparison for different tone systems. Surprisingly, due to the keyboard layout discussed above, basic playing skills acquired and techniques learned for one tone system are immediately applicable to other tone systems.
-
-The biggest part under development is the chord generation and visualization, similar. It will take more time. Certainly, it will be a topic of my next article. Most other features are fully functional at this moment.
+At the moment of writing, some of the plans mentioned above have been implemented. Next work on this topic was published on September 1st, 2017. It is a pure in-browser HTML/JavaScript application, so anyone can [try it out](https://sakryukov.github.io/microtonal-chromatic-lattice-keyboard/index.html) without downloading. It addition to the present work, it is also ***microtonal*** and offers some interesting extras, such as tone/chord comparison for different tone systems. Surprisingly, due to the keyboard layout discussed above, basic playing skills acquired and techniques learned for one tone system are immediately applicable to other tone systems.
 
 Presently, the following [tone systems](https://en.wikipedia.org/wiki/Musical_tuning) are supported:
 - [Just Intonation](https://en.wikipedia.org/wiki/Just_intonation) (only [presented](https://sakryukov.github.io/microtonal-chromatic-lattice-keyboard/tone-system-comparison/tone-system-comparison.html) on the [chromatic-circle](https://en.wikipedia.org/wiki/Chromatic_circle) keyboard)
@@ -567,7 +570,7 @@ Presently, the following [tone systems](https://en.wikipedia.org/wiki/Musical_tu
 - [19-TET](https://en.wikipedia.org/wiki/19_equal_temperament)
 - [31-TET](https://en.wikipedia.org/wiki/31_equal_temperament).
 
-The entire project is [found on GitHub](https://github.com/SAKryukov/microtonal-chromatic-lattice-keyboard).
+The entire project is [found on GitHub](https://github.com/SAKryukov/microtonal-chromatic-lattice-keyboard). The [CodeProject article](https://www.codeproject.com/Articles/1204180/Microtonal-Music-Study-Chromatic-Lattice-Keyboard) is also published.
 
 ## Conclusions
 
