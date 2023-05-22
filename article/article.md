@@ -1,4 +1,4 @@
-Musical Study with Isomorphic Computer Keyboard[](title)
+Musical Study with Isomorphic Computer Keyboard{title}
 
 [*Sergey A Kryukov*](https://www.SAKryukov.org)
 
@@ -14,10 +14,10 @@ A computer keyboard can be turned into an isomorphic musical instrument, to help
 
 <blockquote id="epigraph" class="FQ"><div class="FQA">Epigraphs:</div>
 
-<p id="special.luibochka-arpeggio">On the left of the sofa, there was an old English grand piano. Before the piano, sitting was my dear black-haired sister Luibochka; by her pink, freshly washed with cold water fingers, she played, with noticeable tension, études by Clementi. She was eleven years old... could take octaves only <i>arpeggio</i>.</p>
+<p id="special-Lyubochka-arpeggio">On the left of the sofa, there was an old English grand piano. Before the piano, sitting was my dear black-haired sister Lyubochka; by her pink, freshly washed with cold water fingers, she played, with noticeable tension, études by Clementi. She was eleven years old... could take octaves only <i>arpeggio</i>.</p>
 <dd>L. N. Tolstoy, <i>Childhood</i>, Chapter II. <i>Maman</i></dd>
 
-<p id="special.no-you-cannot">&mdash; Do I have a right to..?<br/>
+<p id="special-no-you-cannot">&mdash; Do I have a right to..?<br/>
 &mdash; Oh yes, you have!<br/>
 &mdash; So, can I..?<br/>
 &mdash; No, you cannot.
@@ -27,14 +27,15 @@ A computer keyboard can be turned into an isomorphic musical instrument, to help
 
 ![Keyboard](keyboard.png){id=image.keyboard}
 
-## Contents[](notoc)
+## Contents{no-toc}
 
-[](toc)
+@toc
 
 This is the second article in the series dedicated to musical study using specialized keyboards based on the computer keyboard:
 
 1. Present article
 2. *[Microtonal Music Study with Chromatic Lattice Keyboard](https://www.codeproject.com/Articles/1204180/Microtonal-Music-Study-Chromatic-Lattice-Keyboard)*
+3. *[Sound Builder, Web Audio Synthesizer](https://www.codeproject.com/Articles/5268512/Sound-Builder)*
 
 ## Insights
 
@@ -52,7 +53,7 @@ This way, due to the symmetry, we had to consider the lower key as the one assig
 
 But why we consider only the perfect intervals and what's so perfect in those two? And the full-tone interval is special, too --- I would call it "second-fundamental". Why? Because these intervals play most fundamental role in entire musical harmony. Even though we started with "Western" [common-practice](https://en.wikipedia.org/wiki/Common_practice_period) [diatonic system](https://en.wikipedia.org/wiki/Diatonic_scale#.22Modes.22), the "perfection" goes well beyond this scope: it lies in the very fundamentals of physics, mathematics and musical perception. So, two special frequency relationships between tones are most fundamental in any thinkable musical culture and tone system --- they are perceived in a special way, because they are, following even more fundamental trivial (unison) and octave intervals, are the most special in terms of [harmonics](https://en.wikipedia.org/wiki/Harmonic).
 
-I'll try to explain this fundamental nature in further detail [below](#heading.mathematical-view20of20tone20system).
+I'll try to explain this fundamental nature in further detail [below](#heading-mathematical-view-of-tone-system).
 
 ## Motivation
 There is nothing new in this idea, except, perhaps the idea of using the computer keyboard and particular keyboard geometry. [Isomorphic keyboards](https://en.wikipedia.org/wiki/Isomorphic_keyboard) do exist and their value is basically explained.
@@ -63,7 +64,7 @@ To me, the main source of inspiration was the hexagonal [Wicki-Hayden layout](ht
 
 See also: [Jammer keyboard](https://en.wikipedia.org/wiki/Jammer_keyboard), which already implemented in the form of commercially available hardware and [Thummer keyboard](https://en.wikipedia.org/wiki/Thummer_keyboard). Another variant is the [Jankó keyboard](https://en.wikipedia.org/wiki/Jank%C3%B3_keyboard).
 
-I implemented both "Wicki-Hayden" and "Jankó" layouts in [a UI application](#heading.isomorphic-midi20keyboard20application), despite the big geometric difference: my variant uses normal rectangular keys. Nevertheless, the structural isomorphism is more important. And still, the question remains: is the computer keyboard shape and layout just the forced compromise, something much worse than the hexagonal Wicki-Hayden? I would not say so: just the opposite, I think that computer keyboards shape and layout has its benefits and can be used in design of a real musical instrument. First of all, I think it's easier to remember and navigate.
+I implemented both "Wicki-Hayden" and "Jankó" layouts in [a UI application](heading-isomorphic-midi-keyboard-application), despite the big geometric difference: my variant uses normal rectangular keys. Nevertheless, the structural isomorphism is more important. And still, the question remains: is the computer keyboard shape and layout just the forced compromise, something much worse than the hexagonal Wicki-Hayden? I would not say so: just the opposite, I think that computer keyboards shape and layout has its benefits and can be used in design of a real musical instrument. First of all, I think it's easier to remember and navigate.
 
 At the same time, the [suggested keyboard layout](#image.3) is highly suggestive of certain tonal relationships rooted deeply in the very nature of music.
 
@@ -75,7 +76,7 @@ I think understanding of these roots is a two-fold problem. First, the usual exp
 
 Most of the considerations are based on Western [common-practice](https://en.wikipedia.org/wiki/Common_practice_period) view of musical harmony and, in particular, modern Western 12-tone [equally tempered](https://en.wikipedia.org/wiki/Equal_temperament) tone system. At the same time, the scope of most considerations is wider that that, so they can be applied to many other systems. The 12-tone system is used mostly to keep all the subject matter clearly illustrated with well-familiar sounds, as well as graphically. 
 
-I assume the reader is at least familiar with the very basic musical notions, in particular, the idea of pitch, interval, sound frequency, scales and chords, and the basics of modern Western musical notation, first of all, Latin letter notation (C-D-E... notes with alteration sharp/flat/natural signs: ♯, ♭ and ♮). It's also good to have a fairly good idea on how these notes sound, but, if it is a problem, it can be easily learned, for example... using the [application](#heading.isomorphic-midi20keyboard20application) downloadable on the page of this article in the form of source code --- main purpose of this application is to serve as a study and illustration device.
+I assume the reader is at least familiar with the very basic musical notions, in particular, the idea of pitch, interval, sound frequency, scales and chords, and the basics of modern Western musical notation, first of all, Latin letter notation (C-D-E... notes with alteration sharp/flat/natural signs: ♯, ♭ and ♮). It's also good to have a fairly good idea on how these notes sound, but, if it is a problem, it can be easily learned, for example... using the [application](heading-isomorphic-midi-keyboard-application) downloadable on the page of this article in the form of source code --- main purpose of this application is to serve as a study and illustration device.
 
 Even if the reader does not have these prerequisites, this matter is not too hard to learn by appropriate reading. I also suggest some useful reading through the links found in the article. The skills of reading and understanding mathematical text of average complexity would very useful, but not absolutely necessary. 
 
@@ -91,9 +92,9 @@ Due to the octave equivalence, any system of ascending/descending pitches can be
 
 ![Chromatic circle](circle.png).
 
-One detail on this picture may look confusing: the 7th degree is positioned on B-flat, not B, as it should be in the [major scale](https://en.wikipedia.org/wiki/Major_scale). I'll explain this choice (and the fact it's merely a choice) [later](#heading.mystery-of20mixolydian20mode).
+One detail on this picture may look confusing: the 7th degree is positioned on B-flat, not B, as it should be in the [major scale](https://en.wikipedia.org/wiki/Major_scale). I'll explain this choice (and the fact it's merely a choice) [later](#heading-mystery-of-mixolydian-mode).
 
-First thing to note is that F and G are the only non-altered notes positioned symmetrically. The intervals between the tone and these notes are 5 and 7 semitones, but 7 can also be considered as 5 if counted counterclockwise, from higher to lower pitch, so the two are *reciprocals*. Let's see what harmonics are involved. The frequency ratio for F is 4:3, and for G it is 3:2. These set of numerator/denominator pairs is the simplest possible, not counting unison's 1:1 an octave's 2:1. Now, the frequency ratio for the whole tone between F and G is second simplest, as the combination of F and G ratio gives us 9:8.{id=special.reciprocal}
+First thing to note is that F and G are the only non-altered notes positioned symmetrically. The intervals between the tone and these notes are 5 and 7 semitones, but 7 can also be considered as 5 if counted counterclockwise, from higher to lower pitch, so the two are *reciprocals*. Let's see what harmonics are involved. The frequency ratio for F is 4:3, and for G it is 3:2. These set of numerator/denominator pairs is the simplest possible, not counting unison's 1:1 an octave's 2:1. Now, the frequency ratio for the whole tone between F and G is second simplest, as the combination of F and G ratio gives us 9:8.{id=special-reciprocal}
 
 These intervals always sound pleasant and "consonant", especially the perfect fifth, totally irrespective to particular cultures of the listeners. This is because of the natural way our [auditory system](https://en.wikipedia.org/wiki/Auditory_system) works. It is also composed of the same set of [strings](https://en.wikipedia.org/wiki/Hair_cell) each resonating not only to its own fundamental frequency, but also to its harmonics. The response is stronger for the lower harmonics, so the system creates strong associations between the musical tones related as rational numbers of low-value numerator/denominator combinations. The same should apply to many other animals which quite obviously respond to music.
 
@@ -114,13 +115,16 @@ But what are the errors in such approximation? How different are the pitches of 
 7: B: error: -11.7</pre>
 The errors are shown in [cents](https://en.wikipedia.org/wiki/Cent_%28music%29).
 
+The problem of errors is addressed im *[microtonal music](https://en.wikipedia.org/wiki/Microtonal_music)*. See also new product, [Microtonal Fabric](#heading-future-is-already-here).
+
 It shows how special perfect intervals are: the errors are less than 2 cents. These intervals are indeed fundamental.
 
 Let's note that the interval of one full tone, represented here by the second degree, can be considered as "second fundamental". Notably, corresponding error shown above is exactly the double of the error value for perfect fourth and fifth. This is explainable: the interval between perfect fifth and perfect fourth is one full tone, so the error of this interval is the combination of the error of the perfect intervals.
 
-These considerations provide some explanation of the choice of intervals used as the base of the Wicki-Hayden layout and support my [reasoning](#heading.insights) in the choice of the association of the pitches to keys. Only three of the considered intervals are closed to harmonic ratio values; and all three are uses  as the base of the keyboard layout. As to the other intervals... people with good musical hearing can clearly detect the difference between harmonic intervals and equal-temperament intervals.
+These considerations provide some explanation of the choice of intervals used as the base of the Wicki-Hayden layout and support my [reasoning](#heading-insights) in the choice of the association of the pitches to keys. Only three of the considered intervals are closed to harmonic ratio values; and all three are uses  as the base of the keyboard layout. As to the other intervals... people with good musical hearing can clearly detect the difference between harmonic intervals and equal-temperament intervals.
 
-This contradiction between [equal temperament](https://en.wikipedia.org/wiki/Equal_temperament) and harmonic sound is one of the aspects which will lead us to a very exciting topic: [microtonal music](https://en.wikipedia.org/wiki/Microtonal_music). This topic is too broad to be considered in any serious way in this article. Just one note: in so called [historically informed performance](https://en.wikipedia.org/wiki/Historically_informed_performance) (another most exciting topic), forms of historical non-equal but harmonic-based tuning are used more and more often.  
+This contradiction between [equal temperament](https://en.wikipedia.org/wiki/Equal_temperament) and harmonic sound is one of the aspects which will lead us to a very exciting topic: [microtonal music](https://en.wikipedia.org/wiki/Microtonal_music). This topic is too broad to be considered in any serious way in this article. Just one note: in so called [historically informed performance](https://en.wikipedia.org/wiki/Historically_informed_performance) (another most exciting topic), forms of historical non-equal but harmonic-based tuning are used more and more often.
+
 
 ### Orbits
 The relationships between intervals in the tone system can be described in terms of [group theory](https://en.wikipedia.org/wiki/Group_%28mathematics%29). For our purposes, it will be very fruitful to consider an interval as a *[group action](https://en.wikipedia.org/wiki/Group_action)* which acts on a set of notes.
@@ -157,7 +161,7 @@ The orbit generated by either perfect fourth or perfect fifth (two corresponding
 
 ![Perfect fourth and perfect fifth orbit](orbit-4-5.png)
 
-It also illustrates well-known fact: entire 12-tone tone system can be generated as a combination of perfect intervals based on harmonic ratio values of 4:3 and 2:3. Unfortunately, this or any similar operation cannot generate [equal temperament](https://en.wikipedia.org/wiki/Equal_temperament), and equal temperament [cannot be perfectly harmonic](#heading.rational-and20irrational20numbers). (But fundamental principles of physics and mathematics cannot be "fortunate" or "unfortunate", can they? :-))
+It also illustrates well-known fact: entire 12-tone tone system can be generated as a combination of perfect intervals based on harmonic ratio values of 4:3 and 2:3. Unfortunately, this or any similar operation cannot generate [equal temperament](https://en.wikipedia.org/wiki/Equal_temperament), and equal temperament [cannot be perfectly harmonic](#heading-rational-and-irrational-numbers). (But fundamental principles of physics and mathematics cannot be "fortunate" or "unfortunate", can they? :-))
 
 This simple classification additionally reveals the special and fundamental nature of the perfect intervals. Note that the one semitone is actually less fundamental. For example, using 24 tones in octave, as in [Arab tone system](https://en.wikipedia.org/wiki/Arab_tone_system), or modern 24-TET, would change the trivial orbits, enrich the musical language, but it would not change much it terms of musical harmony. This is a very general property: an inventor of any thinkable tone system, equal or not, no matter how many tones are used, will first take care of having perfect intervals and keeping then as perfect as possible.
 
@@ -179,7 +183,7 @@ From this image along, it's apparent that the hexagonal tiling has the symmetry 
 
 I would consider this as one of the disadvantages of the hexagonal keyboards. Its symmetry can be considered as *redundant*. If the keyboard orientation is unknown, it is not apparent from the geometry how the musical tones are assigned.
 
-Such ambiguity does exist in our geometry, too, but it is resolved by only one test: the keyboard can be oriented upside down or not. The symmetry in respect to vertical axis is not really redundant: the diagonal directions with ±5 and ±7 semitones shift should really be symmetric: from the [chromatic circle](https://en.wikipedia.org/wiki/Chromatic_circle) it is apparent that +7 semitones is equivalent to &minus;5 semitones; and +5 semitones is equivalent to &minus;7 semitones. (I [already mentioned](#special.reciprocal) reciprocal relationships between perfect fourth and fifth.)
+Such ambiguity does exist in our geometry, too, but it is resolved by only one test: the keyboard can be oriented upside down or not. The symmetry in respect to vertical axis is not really redundant: the diagonal directions with ±5 and ±7 semitones shift should really be symmetric: from the [chromatic circle](https://en.wikipedia.org/wiki/Chromatic_circle) it is apparent that +7 semitones is equivalent to &minus;5 semitones; and +5 semitones is equivalent to &minus;7 semitones. (I [already mentioned](#special-reciprocal) reciprocal relationships between perfect fourth and fifth.)
 
 Also, our geometry seems to be simpler for learning and recognition. From this point, I'm going to regard our keyboard structure as *improved* [Wicki-Hayden layout](https://en.wikipedia.org/wiki/Wicki-Hayden_note_layout).
 
@@ -211,7 +215,7 @@ One pretty [fuzzy](https://en.wikipedia.org/wiki/Fuzzy_set) observation: the dir
 
 Anyway, it's pretty easy to perform glissando based on most of these intervals --- we just have to move at certain fixed angle, along the blue lines shown on the [interval chart](#image.intervals). Our keyboard introduces the whole family of novel glissando types!
 
-To get a good feel of this structure, it would be good the practice using the software [application](#heading.isomorphic-midi20keyboard20application) which represents it in both graphical and audible form.
+To get a good feel of this structure, it would be good the practice using the software [application](#heading-isomorphic-midi-keyboard-application) which represents it in both graphical and audible form.
 
 ### Hair Cell Resonances
 
@@ -380,7 +384,7 @@ In rare cases when .NET is installed in some non-standard location, file "build.
 
 It turns out that both visual perception and motoric memory in humans is the most catchy in "2D". Giving rank 2 to the keyboards makes relationships between pitches much more graphical and well memorable. Depending on individual traits, some people better remember by fingers, some by pictures, but for fingering charts this is the same thing.  
 
-The charts are always read in the same way: from lowest line up and then left to right within each line. If the keys are played in this order, it corresponds to the ascending order to scales or arpeggios. (Of course, with the given keyboard structure, it's always possible to give an example of the chart where the pitch is lower in the upper line, but for our purpose there is no use of such cases.)
+The charts are always read in the same way: from lowest line up and then left to right within each line. If the keys are played in this order, it corresponds to the ascending order to scales or ggios. (Of course, with the given keyboard structure, it's always possible to give an example of the chart where the pitch is lower in the upper line, but for our purpose there is no use of such cases.)
 
 Let's see how our keyboard layout can help to analyze and better understand different musical structures. The fingering charts themselves are not essential for the study, but they can help me to explain things. 
 
@@ -405,7 +409,7 @@ Here [they](https://en.wikipedia.org/wiki/Diatonic_scale#.22Modes.22) are:
 7. Locrian:
 ![Locrian](7-b.png) `B-C-D-E-F-G-A-(B) => 1 ♭2 ♭3 4 ♭5 ♭6 ♭7`
 
-In this list, the numbers represent the numbers of tonic with respect to [major scale](https://en.wikipedia.org/wiki/Major_scale). In other words, the sequence starts with 1st degree of that scale, C, for Ionian, with 2nd, D, for Dorian, and so on, as shown next to the [fingering charts](#heading.fingering-charts).
+In this list, the numbers represent the numbers of tonic with respect to [major scale](https://en.wikipedia.org/wiki/Major_scale). In other words, the sequence starts with 1st degree of that scale, C, for Ionian, with 2nd, D, for Dorian, and so on, as shown next to the [fingering charts](#heading-fingering-charts).
 
 The modes consist of the same notes. So, why they sound differently? Medieval and Renaissance authors of Western Church, probably following Ancient Greek musicians and theorists, attributed deeply emotional [interpretations](https://en.wikipedia.org/wiki/Mode_(music)#Use) to their modes (somewhat different from the modern ones).
 
@@ -424,15 +428,15 @@ Indeed, this structure is called [major pentatonic](https://en.wikipedia.org/wik
 
 No wonder, this structure also plays fundamental role in music, perhaps, in some respect, even more fundamental than traditional Western minors and majors. It would be a common mistake to consider it as a "usual" [heptatonic scale](https://en.wikipedia.org/wiki/Heptatonic_scale) with some degrees skipped. Rather, it is the primary and independent structure. To Western ear, it may sound as "Chinese" (and indeed is used in the music of China) but is actually natural to folk music of many countries, as well as spirituals, gospel, jazz... well, it's easier to read [the article](https://en.wikipedia.org/wiki/Pentatonic_scale) than to list.
 
-Now we can do the [same exercise as with heptatonic modes](#heading.modes). Obviously, five different pentatonic modes can be considered. Each of such modes can be obtained by starting with one of the C-D-E-D-A keys and shifting other keys cyclically. Then, for comparison, all resulting sequences can be transposed to the same key. 
+Now we can do the [same exercise as with heptatonic modes](#heading-modes). Obviously, five different pentatonic modes can be considered. Each of such modes can be obtained by starting with one of the C-D-E-D-A keys and shifting other keys cyclically. Then, for comparison, all resulting sequences can be transposed to the same key. 
 
-Now we can try to uncover one mystery. One of the "natural modes" listed [above](#heading.keyboard-usage) is also special. Oddly enough, this is not the traditional "C-D-E-F-G-A-B" Ionian. This is Mixolydian. By some reason, it is related to the modern digital chord notation. Let's try to explain it.
+Now we can try to uncover one mystery. One of the "natural modes" listed [above](#heading-using-the-keyboard) is also special. Oddly enough, this is not the traditional "C-D-E-F-G-A-B" Ionian. This is Mixolydian. By some reason, it is related to the modern digital chord notation. Let's try to explain it.
 
 ### Mystery of Mixolydian Mode 
 
 There is some apparent inconsistency in chord terminology compared with scales or modes terminology. When, for example, the [common-practice](https://en.wikipedia.org/wiki/Common_practice_period) major scale is discussed, B is called 7th degree. When a chord is built and 7th *chord note* is used, ♭B is regarded as unaltered seventh, which is denoted without any alteration signs such as ♭ or &minus;; this is just one of the peculiarities of notation. However, I can just speculate that this is also related to somewhat different function of certain chord notes and melodic nodes of the mode. In modern practice, such seventh chord is usually called [dominant seventh chord](https://en.wikipedia.org/wiki/Dominant_seventh_chord) (note ♭B on the top picture) and regarded as "the most important of all the seventh chords". Diminished B is used to put additional dynamism to the chord and give it more dissonant and "introductory" character, as it usually opens a different circle of musical motion. This very basic and even boring device of musical *phrasing*, especially typical for modern folk or popular music, was notoriously rare in earlier usage, even during earlier [common practice period](https://en.wikipedia.org/wiki/Common_practice_period), before some period of time closer to 19 century. At that time, diminished seventh was considered as [embellishing or nonchord tone](https://en.wikipedia.org/wiki/Nonchord_tone), so modern "dominant seventh chord" of the C-E-G-♭B would not even considered as a valid chord.
 
-At the same time, diminished seventh sounds quite harmonic, which is related to the reasons I tried to explain in relation to [pentatonic](#heading.26ldquo3bmusically-deformed20pentagram26rdquo3b) system. Indeed, the correlation between harmonic value and subjective "consonant" or "dissonant" qualities is not so straightforward; such perception also [highly depends on cultural factors](#heading.culture-versus20physics).
+At the same time, diminished seventh sounds quite harmonic, which is related to the reasons I tried to explain in relation to [pentatonic](#heading-26ldquo3bmusically-deformed-pentagram26rdquo3b) system. Indeed, the correlation between harmonic value and subjective "consonant" or "dissonant" qualities is not so straightforward; such perception also [highly depends on cultural factors](#heading-culture-versus-physics).
 
 Interestingly, there is a number of historical/cultural peculiarities around the notes B and ♭B. In some European countries, these notes have different names and denoting letters. In "our" notation B means the note si (ti) at the interval 11 relative to C, and ♭B, si/ti-bémol/bemolle/flat at the interval 10. At this moment, to avoid any assumptions on which notation is "correct", let me use the non-ambiguous names si and ♭si. In some cultures, si is denoted as H, and ♭si as B. The H notation is often [referred to as](https://www.library.yale.edu/cataloging/music/keylang.htm) "German", but its use is [much wider](https://en.wikipedia.org/wiki/Key_signature_names_and_translations). I personally also used to H as si more than to B. Even in the same country, both B and H-notation can be found in publications, most typically in popular music. If H is found, it becomes clear, but if not, how to understand "B"? Imagine confusion of the readers, mostly amateur musicians, who would have to derive the meaning of it from the context.{id=special.German.H}
 
@@ -446,7 +450,7 @@ Pretty simple observations reveal how the modern classification of chords is bui
 - Take every third node, starting from the triad: 1-3-5. In C, it gives us C-E-G, major triad.
 - Optionally add 7th, which gives us C-E-G-♭B.
 - For any of these notes, alter any of the degrees except 1st by a semitone. Note that diminished 7th will become 6th, but, in this context, we should better consider 6th as the note "in the zone of sevenths". Also note that diminished 3rd corresponds to the notion of "minor".
-- Basically, it fully covers all the chords within octave, not counting [inversions](https://en.wikipedia.org/wiki/Inversion_(music)) and pretty special case of "suspended" chords I will have to explain [separately](#special.suspended).
+- Basically, it fully covers all the chords within octave, not counting [inversions](https://en.wikipedia.org/wiki/Inversion_(music)) and pretty special case of "suspended" chords I will have to explain [separately](#special-suspended).
 - From this point, we can optionally add 9th, 11th or 13th, which are essentially 2nd, 4th and 6th rolled over the octave. In C, if these notes are unaltered, they become D, F and A.
 - Optionally, alter any of the 9th, 11th or 13th (if any of them present), by one semitone, up or down. Again, while 9th can be diminished or augmented, 11th can only be augmented and 13th can only be diminished, otherwise alteration should land in a zone corresponding to a different degree of our mode.
 
@@ -454,7 +458,7 @@ Having all that, let's get into the chord structure.
 
 ## Chords
 
-My explanation of the chord structure will be based on the part of the UI of the [application](#heading.isomorphic-midi20keyboard20application) marked as "Chords". The choice of required chord structure is performed by checking certain radio buttons or check buttons.
+My explanation of the chord structure will be based on the part of the UI of the [application](#heading-isomorphic-midi-keyboard-application) marked as "Chords". The choice of required chord structure is performed by checking certain radio buttons or check buttons.
 
 ### Structure of Chords
 
@@ -522,7 +526,7 @@ A chord can also be taken manually through the keyboard. The study of the auto-g
 
 The problem can be described as the [lack of n-key rollover](https://en.wikipedia.org/wiki/Rollover_(key)). It means the inability of a keyboard to correctly handle several simultaneous keystrokes. At the moment of writing, I'm doing it on my laptop and play with my application. If I keep a row of four keys down, none of any neighboring sends keystrokes to the computer. This is a matter of the hardware, keyboard circuitry (lack if *isolation diodes*) and controller, the effect of the reduction of the keyboard cost and design complexity.
 
-Without finding out and buying a better keyboard, there is [nothing we can do](#special.no-you-cannot) about it. We can play [like Luibochka, only arpeggio](#special.luibochka-arpeggio). Another way of tacking chords would be using the feature of chord generation and especially [chord presets](#heading.chord-presets).
+Without finding out and buying a better keyboard, there is [nothing we can do](#special.no-you-cannot) about it. We can play [like Lyubochka, only arpeggio](special-Lyubochka-arpeggio). Another way of tacking chords would be using the feature of chord generation and especially [chord presets](#heading-chord-presets).
 
 Another problem is related to the notion of [translational symmetry](https://en.wikipedia.org/wiki/Translational_symmetry). Strictly speaking, when it comes to the standard computer keyboards, they are not so symmetric --- its layout is considerably distorted. Its "Q" row is shifted relative to the "A" not as symmetrically as "A" relative to "Z". For real playing, it would be a serious critical hassle, but, after all, we only study...
 
@@ -562,15 +566,28 @@ Some further ideas include
 
 ### Future is Already Here
 
-At the moment of writing, some of the plans mentioned above have been implemented. Next work on this topic was published on September 1st, 2017. It is a pure in-browser HTML/JavaScript application, so anyone can [try it out](https://sakryukov.github.io/microtonal-chromatic-lattice-keyboard/index.html) without downloading. It addition to the present work, it is also ***microtonal*** and offers some interesting extras, such as tone/chord comparison for different tone systems. Surprisingly, due to the keyboard layout discussed above, basic playing skills acquired and techniques learned for one tone system are immediately applicable to other tone systems.
+At the moment of writing, some of the plans mentioned above have been implemented. New product under then name [Microtonal Fabric](https://en.xen.wiki/w/Sergey_A_Kryukov#Microtonal_Fabric) is created. It is a platform and a set of application playable in a Web browser. As the name suggests, it is ***microtonal*** and offers some interesting extras, such as tone/chord comparison for different tone systems. Surprisingly, due to the keyboard layout discussed above, basic playing skills acquired and techniques learned for one tone system are immediately applicable to other tone systems. 
 
 Presently, the following [tone systems](https://en.wikipedia.org/wiki/Musical_tuning) are supported:
-- [Just Intonation](https://en.wikipedia.org/wiki/Just_intonation) (only [presented](https://sakryukov.github.io/microtonal-chromatic-lattice-keyboard/tone-system-comparison/tone-system-comparison.html) on the [chromatic-circle](https://en.wikipedia.org/wiki/Chromatic_circle) keyboard)
-- [Common-practice](https://en.wikipedia.org/wiki/Common_practice_period) [12-TET](https://en.wikipedia.org/wiki/Equal_temperament)
-- [19-TET](https://en.wikipedia.org/wiki/19_equal_temperament)
-- [31-TET](https://en.wikipedia.org/wiki/31_equal_temperament).
+- [Just Intonation](https://en.wikipedia.org/wiki/Just_intonation) (only [presented by the Multi-EDO Chromatic Lattice application](https://sakryukov.github.io/microtonal-fabric/code/tone-system-comparison) on the [chromatic-circle](https://en.wikipedia.org/wiki/Chromatic_circle) keyboard)
+- [Common-practice](https://en.wikipedia.org/wiki/Common_practice_period) system [12-EDO](https://en.xen.wiki/w/12edo)
+- [19-EDO](https://en.wikipedia.org/wiki/19_equal_temperament)
+- [31-EDO](https://en.wikipedia.org/wiki/31_equal_temperament).
+
+[29-EDO](https://en.wikipedia.org/wiki/19_equal_temperament) is supported by a separate application (source code: "29-EDO"). This application is more advanced and is currently used for teaching music in the famous international Brainin school of music on a regular basis. It deserves a separate article.
+
+Any arbitrary tonal systems can be created using Microtonal Playground (source code: "playground").
+
+The applications support standard touchscreen. With a touchscreen, one can play with ten fingers, any chords, glissando (important) in any combinations. So a touchscreen is highly recommended. Without a touch screen, a user still can play with a mouse/touchpad and, in special cases, a computer keyboard.
 
 The entire project is [found on GitHub](https://github.com/SAKryukov/microtonal-chromatic-lattice-keyboard). The [CodeProject article](https://www.codeproject.com/Articles/1204180/Microtonal-Music-Study-Chromatic-Lattice-Keyboard) is also published.
+
+The ready-to-play applications, presently available in Microtonal Fabric can be found on the [Microtonal Fabric main documentation page](https://sakryukov.github.io/microtonal-fabric). One can try out the applications and play music directly in a Web browser.
+
+The application discussed in the present article is named [Multi-EDO Chromatic Lattice and can be played here](https://sakryukov.github.io/microtonal-fabric/code/Multi-EDO).
+
+Another application discussed in this article is the application for [Microtonal System Comparison](https://sakryukov.github.io/microtonal-fabric/code/tone-system-comparison).
+
 
 ## Conclusions
 
