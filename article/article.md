@@ -14,7 +14,7 @@ A computer keyboard can be turned into an isomorphic musical instrument, to help
 
 <blockquote id="epigraph" class="FQ"><div class="FQA">Epigraphs:</div>
 
-<p id="special-Lyubochka-arpeggio">On the left of the sofa, there was an old English grand piano. Before the piano, sitting was my dear black-haired sister Lyubochka; by her pink, freshly washed with cold water fingers, she played, with noticeable tension, études by Clementi. She was eleven years old... could take octaves only <i>arpeggio</i>.</p>
+<p id="special-lyubochka-arpeggio">On the left of the sofa, there was an old English grand piano. Before the piano, sitting was my dear black-haired sister Lyubochka; by her pink, freshly washed with cold water fingers, she played, with noticeable tension, études by Clementi. She was eleven years old... could take octaves only <i>arpeggio</i>.</p>
 <dd>L. N. Tolstoy, <i>Childhood</i>, Chapter II. <i>Maman</i></dd>
 
 <p id="special-no-you-cannot">&mdash; Do I have a right to..?<br/>
@@ -444,7 +444,7 @@ Anyway, we can imagine what could be the root cause for this mess. The reason is
 
 So, coming back to ♭si (♭B) as 7th degree... Let's summarize. In C [major scale](https://en.wikipedia.org/wiki/Major_scale), 7th degree is si (B). The other natural-mode scale where all notes are the same except for B altered down to ♭B is the only one, [Mixolydian](https://en.wikipedia.org/wiki/Mode_%28music%29#Mixolydian_.28V.29). And finally, another place where the note ♭si (not si) is considered as 7th degree in C key is the modern alphanumeric notation for chords. Even though when the chord is considered as major seventh in C key, in contrast to C major scale, the 7th is ♭si (not si). 
 
-Pretty simple observations reveal how the modern classification of chords is built. It can be represented as a sequence of following steps:{id=special.chord.steps}
+Pretty simple observations reveal how the modern classification of chords is built. It can be represented as a sequence of following steps:{id=special-chord-steps}
 
 - Take the sequence of notes corresponding to mixolydian mode. For simplicity, let's consider C key, then it will be C-D-E-F-G-A-♭B.
 - Take every third node, starting from the triad: 1-3-5. In C, it gives us C-E-G, major triad.
@@ -478,7 +478,7 @@ If it's not quite clear, let's clarify what it means:
 <tr><td>2</td><td>m</td><td>3</td><td>4</td><td>3</td></tr>
 </table>
 
-The table should be read and used from bottom to top. This is because I tried to conduct the idea of the tone "height" in both keyboard layout and notation: the higher pitch is shown higher. The chord structure is based on the steps explained [above](#special.chord.steps).
+The table should be read and used from bottom to top. This is because I tried to conduct the idea of the tone "height" in both keyboard layout and notation: the higher pitch is shown higher. The chord structure is based on the steps explained [above](#special-chord-steps).
 
 I think everything should be clear here, perhaps except the first column and last row:
 - The numbers 1 to 13 denote the degree of the *mixolydian mode* which can be associated with the root of the chord.
@@ -526,7 +526,7 @@ A chord can also be taken manually through the keyboard. The study of the auto-g
 
 The problem can be described as the [lack of n-key rollover](https://en.wikipedia.org/wiki/Rollover_(key)). It means the inability of a keyboard to correctly handle several simultaneous keystrokes. At the moment of writing, I'm doing it on my laptop and play with my application. If I keep a row of four keys down, none of any neighboring sends keystrokes to the computer. This is a matter of the hardware, keyboard circuitry (lack if *isolation diodes*) and controller, the effect of the reduction of the keyboard cost and design complexity.
 
-Without finding out and buying a better keyboard, there is [nothing we can do](#special.no-you-cannot) about it. We can play [like Lyubochka, only arpeggio](special-Lyubochka-arpeggio). Another way of tacking chords would be using the feature of chord generation and especially [chord presets](#heading-chord-presets).
+Without finding out and buying a better keyboard, there is [nothing we can do](#special-no-you-cannot) about it. We can play [like Lyubochka, only arpeggio](#special-lyubochka-arpeggio). Another way of tacking chords would be using the feature of chord generation and especially [chord presets](#heading-chord-presets).
 
 Another problem is related to the notion of [translational symmetry](https://en.wikipedia.org/wiki/Translational_symmetry). Strictly speaking, when it comes to the standard computer keyboards, they are not so symmetric --- its layout is considerably distorted. Its "Q" row is shifted relative to the "A" not as symmetrically as "A" relative to "Z". For real playing, it would be a serious critical hassle, but, after all, we only study...
 
@@ -580,7 +580,7 @@ Any arbitrary tonal systems can be created using Microtonal Playground (source c
 
 The applications support standard touchscreen. With a touchscreen, one can play with ten fingers, any chords, glissando (important) in any combinations. So a touchscreen is highly recommended. Without a touch screen, a user still can play with a mouse/touchpad and, in special cases, a computer keyboard.
 
-The entire project is [found on GitHub](https://github.com/SAKryukov/microtonal-chromatic-lattice-keyboard). The [CodeProject article](https://www.codeproject.com/Articles/1204180/Microtonal-Music-Study-Chromatic-Lattice-Keyboard) is also published.
+The entire project can be [found on GitHub](https://github.com/SAKryukov/microtonal-fabric). The [CodeProject article](https://www.codeproject.com/Articles/1204180/Microtonal-Music-Study-Chromatic-Lattice-Keyboard) is also published.
 
 The ready-to-play applications, presently available in Microtonal Fabric can be found on the [Microtonal Fabric main documentation page](https://sakryukov.github.io/microtonal-fabric). One can try out the applications and play music directly in a Web browser.
 
