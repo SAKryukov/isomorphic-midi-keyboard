@@ -25,7 +25,7 @@ A computer keyboard can be turned into an isomorphic musical instrument, to help
 <dd>Old human rights joke</dd>
 </blockquote>
 
-![Keyboard](keyboard.png){id=image.keyboard}
+![Keyboard](keyboard.png){id=image-keyboard}
 
 ## Contents{no-toc}
 
@@ -47,7 +47,7 @@ After all, the computer keyboard is nothing like a linearly-structured piano key
 
 Wait a minute... There are only two intervals called "perfect": [perfect fourth](https://en.wikipedia.org/wiki/Perfect_fourth) and [perfect fifth](https://en.wikipedia.org/wiki/Perfect_fifth). Shall we ever need anything less than perfect? :-) So, as the tones in a row should ascend left to right, let's assign left-top key to perfect fourth and right-top to perfect fifth. The interval between them is one full tone, so it should be the interval in any two neighboring keys in each row. Done.
 
-![Three keys](3.png){id=image.3}
+![Three keys](3.png){id=image-3}
 
 This way, due to the symmetry, we had to consider the lower key as the one assigned to some [fundamental frequency](https://en.wikipedia.org/wiki/Fundamental_frequency), and the decision of other two came automatically. In terms of the Western [common-practice](https://en.wikipedia.org/wiki/Common_practice_period) [tone system](https://en.wikipedia.org/wiki/Musical_tuning), the three notes can be considered as 1st, 4th and 5th [degrees](https://en.wikipedia.org/wiki/Degree_%28music%29) of the traditional [major scale](https://en.wikipedia.org/wiki/Major_scale). These degree numbers are shown on the picture, and the "distances" are the rational frequency ratio values and distances in semitones (in brackets).
 
@@ -62,11 +62,11 @@ See also: [transpositional equivalence](https://en.wikipedia.org/wiki/Transposit
 
 To me, the main source of inspiration was the hexagonal [Wicki-Hayden layout](https://en.wikipedia.org/wiki/Wicki-Hayden_note_layout).
 
-See also: [Jammer keyboard](https://en.wikipedia.org/wiki/Jammer_keyboard), which already implemented in the form of commercially available hardware and [Thummer keyboard](https://en.wikipedia.org/wiki/Thummer_keyboard). Another variant is the [Jankó keyboard](https://en.wikipedia.org/wiki/Jank%C3%B3_keyboard).
+See also: [Jammer keyboard](https://en.wikipedia-on-ipfs.org/wiki/Jammer_keyboard), which already implemented in the form of commercially available hardware and [Thummer keyboard](https://encyclopedia.pub/entry/30493). Another variant is the [Jankó keyboard](https://en.wikipedia.org/wiki/Jank%C3%B3_keyboard).
 
-I implemented both "Wicki-Hayden" and "Jankó" layouts in [a UI application](heading-isomorphic-midi-keyboard-application), despite the big geometric difference: my variant uses normal rectangular keys. Nevertheless, the structural isomorphism is more important. And still, the question remains: is the computer keyboard shape and layout just the forced compromise, something much worse than the hexagonal Wicki-Hayden? I would not say so: just the opposite, I think that computer keyboards shape and layout has its benefits and can be used in design of a real musical instrument. First of all, I think it's easier to remember and navigate.
+I implemented both "Wicki-Hayden" and "Jankó" layouts in [a UI application](#heading-isomorphic-midi-keyboard-application), despite the big geometric difference: my variant uses normal rectangular keys. Nevertheless, the structural isomorphism is more important. And still, the question remains: is the computer keyboard shape and layout just the forced compromise, something much worse than the hexagonal Wicki-Hayden? I would not say so: just the opposite, I think that computer keyboards shape and layout has its benefits and can be used in design of a real musical instrument. First of all, I think it's easier to remember and navigate.
 
-At the same time, the [suggested keyboard layout](#image.3) is highly suggestive of certain tonal relationships rooted deeply in the very nature of music.
+At the same time, the [suggested keyboard layout](#image-3) is highly suggestive of certain tonal relationships rooted deeply in the very nature of music.
 
 I think understanding of these roots is a two-fold problem. First, the usual explanation of first principles is badly clouded with awkward explanations full of redundancies, enormously over-complicated terminology full of purely historical peculiarities, and the notation showing some real and often pretty simple structures in a very indirect way. From the other hand, some most important and non-trivial points are almost never formulated explicitly. Through the computerized study and some near-elementary analysis, I want to offer some food for thought, first of all, for myself, a non-professional musician rather coming from certain understanding of science. I also would like to stimulate some critical and rational thinking.  
 
@@ -76,13 +76,13 @@ I think understanding of these roots is a two-fold problem. First, the usual exp
 
 Most of the considerations are based on Western [common-practice](https://en.wikipedia.org/wiki/Common_practice_period) view of musical harmony and, in particular, modern Western 12-tone [equally tempered](https://en.wikipedia.org/wiki/Equal_temperament) tone system. At the same time, the scope of most considerations is wider that that, so they can be applied to many other systems. The 12-tone system is used mostly to keep all the subject matter clearly illustrated with well-familiar sounds, as well as graphically. 
 
-I assume the reader is at least familiar with the very basic musical notions, in particular, the idea of pitch, interval, sound frequency, scales and chords, and the basics of modern Western musical notation, first of all, Latin letter notation (C-D-E... notes with alteration sharp/flat/natural signs: ♯, ♭ and ♮). It's also good to have a fairly good idea on how these notes sound, but, if it is a problem, it can be easily learned, for example... using the [application](heading-isomorphic-midi-keyboard-application) downloadable on the page of this article in the form of source code --- main purpose of this application is to serve as a study and illustration device.
+I assume the reader is at least familiar with the very basic musical notions, in particular, the idea of pitch, interval, sound frequency, scales and chords, and the basics of modern Western musical notation, first of all, Latin letter notation (C-D-E... notes with alteration sharp/flat/natural signs: ♯, ♭ and ♮). It's also good to have a fairly good idea on how these notes sound, but, if it is a problem, it can be easily learned, for example... using the [application](#heading-isomorphic-midi-keyboard-application) downloadable on the page of this article in the form of source code --- main purpose of this application is to serve as a study and illustration device.
 
 Even if the reader does not have these prerequisites, this matter is not too hard to learn by appropriate reading. I also suggest some useful reading through the links found in the article. The skills of reading and understanding mathematical text of average complexity would very useful, but not absolutely necessary. 
 
 ### Rational and Irrational Numbers
 
-When I depicted harmonic intervals with frequency ratio of [3/2, 4/3 and 9/8](#image.3), I was cunning. The real intervals depend on the tuning system and most usually differ from these precisely harmonic intervals. I hope many could see it or understand this aspect well. I just failed to find a better way to explain things step-by-step. This is actually a pretty painful problem of music in general, mostly because it's pretty hard to explain, especially to musicians, not mentioning the students of music who either remain unaware of the problem, or face major confusion due to the mess of facts and explanations which often conceal, not reveal the essence of things.
+When I depicted harmonic intervals with frequency ratio of [3/2, 4/3 and 9/8](#image-3), I was cunning. The real intervals depend on the tuning system and most usually differ from these precisely harmonic intervals. I hope many could see it or understand this aspect well. I just failed to find a better way to explain things step-by-step. This is actually a pretty painful problem of music in general, mostly because it's pretty hard to explain, especially to musicians, not mentioning the students of music who either remain unaware of the problem, or face major confusion due to the mess of facts and explanations which often conceal, not reveal the essence of things.
 
 Let's start with something very basic. What should we understand by pitch? Frequencies of several musical tones are perceived in logarithmic scale. In other words, two intervals between pitches are perceived as equal if the frequencies of the ending pitches of the intervals are generated by multiplying the frequency of the starting pitches of the interval by the same factor. Subjectively, frequencies are *multiplicative*. In this sense, any number representing the pitch value has to be a logarithmic measure of the frequency. In this case, the pitch values are *additive*.
 
@@ -115,7 +115,7 @@ But what are the errors in such approximation? How different are the pitches of 
 7: B: error: -11.7</pre>
 The errors are shown in [cents](https://en.wikipedia.org/wiki/Cent_%28music%29).
 
-The problem of errors is addressed im *[microtonal music](https://en.wikipedia.org/wiki/Microtonal_music)*. See also new product, [Microtonal Fabric](#heading-future-is-already-here).
+The problem of errors is addressed in *[microtonal music](https://en.wikipedia.org/wiki/Microtonal_music)*. See also the new product, [Microtonal Fabric](#heading-future-is-already-here).
 
 It shows how special perfect intervals are: the errors are less than 2 cents. These intervals are indeed fundamental.
 
@@ -175,7 +175,7 @@ Two factors: [octave equivalence](https://en.wikipedia.org/wiki/Octave) and [ari
 
 A two-dimensional lattice can be represented as a periodic *tessellation*. So, the keyboard geometry with associated pitches can be classified as one of the possible [tessellations](https://en.wikipedia.org/wiki/Tessellation). This concept itself is, in my opinion, one of the breathtaking topics in mathematics, first of all, due to existing of *aperiodic tiling*. But here we discuss much simpler periodic structures, with [translational symmetry](https://en.wikipedia.org/wiki/Translational_symmetry).
 
-In certain sense, the [suggested structure](#image.3) defines the symmetry which matches the symmetry of tonal intervals. Let's consider the mapping between this geometry and the geometry of the [Wicki-Hayden layout](https://en.wikipedia.org/wiki/Wicki-Hayden_note_layout):
+In certain sense, the [suggested structure](#image-3) defines the symmetry which matches the symmetry of tonal intervals. Let's consider the mapping between this geometry and the geometry of the [Wicki-Hayden layout](https://en.wikipedia.org/wiki/Wicki-Hayden_note_layout):
 
 ![Isomorphism](isomorphism.png)
 
@@ -207,19 +207,19 @@ Any translation vector connecting any pair of keys generates a line with periodi
 
 Interval values are counted in semitones, and, for simplicity, the vectors are shown in [Euclidean space](https://en.wikipedia.org/wiki/Euclidean_space) with the units equal to the width/height of the key, if we assume the keys are square-shaped. And this is how the lines of periodic tone pattern corresponding to these intervals look on the keyboard:
 
-![intervals](intervals.png){id=image.intervals}
+![intervals](intervals.png){id=image-intervals}
 
 Note that the tones at the octave interval lie vertically one over another and that the 8-semitone interval is the only one which has its symmetric translation vector beyond the current octave --- its nearest interval is 16 semitones.
 
 One pretty [fuzzy](https://en.wikipedia.org/wiki/Fuzzy_set) observation: the directions based on more important and fundamental intervals tend to lie closer to diagonals while others tend to lie closer to the horizontal line, not counting the horizontal line itself, which represents very important major second.  
 
-Anyway, it's pretty easy to perform glissando based on most of these intervals --- we just have to move at certain fixed angle, along the blue lines shown on the [interval chart](#image.intervals). Our keyboard introduces the whole family of novel glissando types!
+Anyway, it's pretty easy to perform glissando based on most of these intervals --- we just have to move at certain fixed angle, along the blue lines shown on the [interval chart](#image-intervals). Our keyboard introduces the whole family of novel glissando types!
 
 To get a good feel of this structure, it would be good the practice using the software [application](#heading-isomorphic-midi-keyboard-application) which represents it in both graphical and audible form.
 
 ### Hair Cell Resonances
 
-I'm afraid my reasoning referring to fundamental nature of [3/2, 4/3 and "second fundamental" 9/8](#image.3) could still look like some mantra. Why simplest rational numbers in frequency ratio values should be perceived by our [auditory system](https://en.wikipedia.org/wiki/Auditory_system) is some special way? With the ratio of 2/1 (octave), it looks clear: the same very resonator (say, hair cell sensor) resonates on its [fundamental frequency](https://en.wikipedia.org/wiki/Fundamental_frequency), but also on its double frequency --- second [harmonic](https://en.wikipedia.org/wiki/Harmonic). No wonder it can create string association between each frequency and its double value. But how about *fractional* rational numbers, such as 3/2 or 4/3? Will a resonator respond to the frequency of 3/2 of its fundamental? Not really. The relationship is a little more complicated and *indirect*. As it may be not 100% clear to everyone, I'll try to explain it. 
+I'm afraid my reasoning referring to fundamental nature of [3/2, 4/3 and "second fundamental" 9/8](#image-3) could still look like some mantra. Why simplest rational numbers in frequency ratio values should be perceived by our [auditory system](https://en.wikipedia.org/wiki/Auditory_system) is some special way? With the ratio of 2/1 (octave), it looks clear: the same very resonator (say, hair cell sensor) resonates on its [fundamental frequency](https://en.wikipedia.org/wiki/Fundamental_frequency), but also on its double frequency --- second [harmonic](https://en.wikipedia.org/wiki/Harmonic). No wonder it can create string association between each frequency and its double value. But how about *fractional* rational numbers, such as 3/2 or 4/3? Will a resonator respond to the frequency of 3/2 of its fundamental? Not really. The relationship is a little more complicated and *indirect*. As it may be not 100% clear to everyone, I'll try to explain it. 
 
 At birth, a human has about [3,500 inner hair cells and 12,000 outer hair cells](https://en.wikipedia.org/wiki/Hair_cell). As the inner hair cells work as the sound detectors, it means that, in principle, we can resolve up to 3,500 different tones or so. Strictly speaking, we can hear ("hear" and "resolve" are different things) some sounds beyond the set of fundamental frequencies of all those sensors. First, the sensors respond to harmonic. Second aspect is much more complicated: due to certain non-linearity of the auditory system, we can also hear combined frequencies; this phenomenon is quite complicated and unrelated to the scope of the present article. 
 
@@ -265,7 +265,7 @@ In fact, this is a topic unrelated to the topic of the current article. I'm not 
 
 The application presents an on-screen keyboard in the [parallelogrammic-lattice](https://en.wikipedia.org/wiki/Lattice_%28group%29#Lattices_in_two_dimensions:_detailed_discussion) geometry with square-shaped keys close to the geometry and layout of the computer keyboard. The sets of pitches are assigned to the key set: one is analogous to the [Wicki-Hayden layout](https://en.wikipedia.org/wiki/Wicki-Hayden_note_layout), another one --- to the [Jankó keyboard](https://en.wikipedia.org/wiki/Jank%C3%B3_keyboard).
 
-The middle part of the keyboard is assigned to the set of keys of the physical computer keyboard, as shown on the [top picture](#image.keyboard). The audio output is based in available MIDI synthesizer installed.
+The middle part of the keyboard is assigned to the set of keys of the physical computer keyboard, as shown on the [top picture](#image-keyboard). The audio output is based in available MIDI synthesizer installed.
 
 The application is a .NET WPF-based application. To maximize the set of compatible systems, it targets "Any CPU" architecture and .NET v. 3.5.
 
@@ -438,7 +438,7 @@ There is some apparent inconsistency in chord terminology compared with scales o
 
 At the same time, diminished seventh sounds quite harmonic, which is related to the reasons I tried to explain in relation to [pentatonic](#heading-26ldquo3bmusically-deformed-pentagram26rdquo3b) system. Indeed, the correlation between harmonic value and subjective "consonant" or "dissonant" qualities is not so straightforward; such perception also [highly depends on cultural factors](#heading-culture-versus-physics).
 
-Interestingly, there is a number of historical/cultural peculiarities around the notes B and ♭B. In some European countries, these notes have different names and denoting letters. In "our" notation B means the note si (ti) at the interval 11 relative to C, and ♭B, si/ti-bémol/bemolle/flat at the interval 10. At this moment, to avoid any assumptions on which notation is "correct", let me use the non-ambiguous names si and ♭si. In some cultures, si is denoted as H, and ♭si as B. The H notation is often [referred to as](https://www.library.yale.edu/cataloging/music/keylang.htm) "German", but its use is [much wider](https://en.wikipedia.org/wiki/Key_signature_names_and_translations). I personally also used to H as si more than to B. Even in the same country, both B and H-notation can be found in publications, most typically in popular music. If H is found, it becomes clear, but if not, how to understand "B"? Imagine confusion of the readers, mostly amateur musicians, who would have to derive the meaning of it from the context.{id=special.German.H}
+Interestingly, there is a number of historical/cultural peculiarities around the notes B and ♭B. In some European countries, these notes have different names and denoting letters. In "our" notation B means the note si (ti) at the interval 11 relative to C, and ♭B, si/ti-bémol/bemolle/flat at the interval 10. At this moment, to avoid any assumptions on which notation is "correct", let me use the non-ambiguous names si and ♭si. In some cultures, si is denoted as H, and ♭si as B. The H notation is often [referred to as](http://www.tonalsoft.com/enc/g/german-h.aspx) "German", but its use is [much wider](https://en.wikipedia.org/wiki/Key_signature_names_and_translations). I personally also used to H as si more than to B. Even in the same country, both B and H-notation can be found in publications, most typically in popular music. If H is found, it becomes clear, but if not, how to understand "B"? Imagine confusion of the readers, mostly amateur musicians, who would have to derive the meaning of it from the context.{id=special-german-g}
 
 Anyway, we can imagine what could be the root cause for this mess. The reason is that in C key ♭si forms fundamentally harmonic interval if it is considered as C shifted down by one full tone (counted counterclockwise on the [chromatic_circle](https://en.wikipedia.org/wiki/Chromatic_circle)), but si is not. But unaltered si plays its role as 7th in the C [major scale](https://en.wikipedia.org/wiki/Major_scale) as its [leading tone](https://en.wikipedia.org/wiki/Leading-tone).
 
@@ -464,7 +464,7 @@ My explanation of the chord structure will be based on the part of the UI of the
 
 This is how the chord structure is represented in the UI:
 
-![Chords](chords-ui.png){id=image.chords-ui}
+![Chords](chords-ui.png){id=image-chords-ui}
 
 If it's not quite clear, let's clarify what it means:
 
@@ -498,7 +498,7 @@ First two lines produce all [triads](https://en.wikipedia.org/wiki/Triad_(music)
 
 But I also added, for convenience and saving some screen place, two "[suspended](https://en.wikipedia.org/wiki/Suspended_chord)" chords to the line of 3rd, because, combined with 5; they will give sus2 or sus4, mutually exclusive with classical triads. The intervals are 2-5 (sus2) and 5-2 (sus4), in case of pure 5. Let's look at them first.
 
-I think the "suspended" chords are vastly under-estimated, if not misunderstood. Let's see how our keyboard layout reveals their fundamental nature: this is sus4: ![sus4](chord-sus4.png) and this is sus2: ![sus2](chord-sus2.png). The fingering occupies our "fundamental key triangle" by obvious reasons: the use of notes correspondent to perfect intervals for sus4, which is also called a [quartal chord](https://en.wikipedia.org/wiki/Quartal_and_quintal_harmony). As to sus2, its transposition by +5 semitones (perfect interval again) results in the same symmetric structure if 5th degree plays the role of 1st, so they reciprocally conjugate each other; and this symmetry is strongly suggested by their fingering charts on our keyboard. Interestingly, such chords without 3rd were not considered as chords during entire [common-practice period](https://en.wikipedia.org/wiki/Common_practice_period): until certain period of time, our 2nd or 4th would be considered as [nonchord tone](https://en.wikipedia.org/wiki/Nonchord_tone).{id=special.suspended}
+I think the "suspended" chords are vastly under-estimated, if not misunderstood. Let's see how our keyboard layout reveals their fundamental nature: this is sus4: ![sus4](chord-sus4.png) and this is sus2: ![sus2](chord-sus2.png). The fingering occupies our "fundamental key triangle" by obvious reasons: the use of notes correspondent to perfect intervals for sus4, which is also called a [quartal chord](https://en.wikipedia.org/wiki/Quartal_and_quintal_harmony). As to sus2, its transposition by +5 semitones (perfect interval again) results in the same symmetric structure if 5th degree plays the role of 1st, so they reciprocally conjugate each other; and this symmetry is strongly suggested by their fingering charts on our keyboard. Interestingly, such chords without 3rd were not considered as chords during entire [common-practice period](https://en.wikipedia.org/wiki/Common_practice_period): until certain period of time, our 2nd or 4th would be considered as [nonchord tone](https://en.wikipedia.org/wiki/Nonchord_tone).{id=special-suspended}
 
 Now, let's took on classical triads based with major or diminished 3rd: major ![major](chord-major.png), minor ![minor](chord-minor.png), diminished ![diminished](chord-diminished.png), augmented ![augmented](chord-augmented.png).
 
@@ -540,17 +540,17 @@ That's why any non-nonsense software function offering "chord naming" often prov
 
 ### Chord Names
 
-The names of the chords used in different source are very confused, not officially standardized anywhere and, in my opinion, should not be taken too seriously. Only score-based notations can be taken as pretty firm standard-de-facto, so they should be learned anyway. Sometimes, the readers need to do a guesswork and figure out what the notation really means from the context, which is, strictly speaking, is only possible when a piece of music is known to the reader. I already mentioned that "dim" sometimes can be understood as diminished triad or m5&minus;/6. Also, "maj" typically means 7+, but sometimes "major". Another source of ambiguity is the symbol '°'. It may mean diminished triad, but sometimes it is used for "dim". Also, [sometimes](https://www.apassion4jazz.net/jazz_chords.html) the special symbol Ø is used for so-called "half-dim", which is similar to "dim" but its 7th is not diminished. And assuming [H notation](#special.German.H) for si in the situations when the letter "B" appears and "H" can make it a nightmare. Hopefully, all this mess happens mostly in simplified publication of popular music pieces well known to the reader.
+The names of the chords used in different source are very confused, not officially standardized anywhere and, in my opinion, should not be taken too seriously. Only score-based notations can be taken as pretty firm standard-de-facto, so they should be learned anyway. Sometimes, the readers need to do a guesswork and figure out what the notation really means from the context, which is, strictly speaking, is only possible when a piece of music is known to the reader. I already mentioned that "dim" sometimes can be understood as diminished triad or m5&minus;/6. Also, "maj" typically means 7+, but sometimes "major". Another source of ambiguity is the symbol '°'. It may mean diminished triad, but sometimes it is used for "dim". Also, [sometimes](https://www.apassion4jazz.net/jazz_chords.html) the special symbol Ø is used for so-called "half-dim", which is similar to "dim" but its 7th is not diminished. And assuming [H notation](#special-german-g) for si in the situations when the letter "B" appears and "H" can make it a nightmare. Hopefully, all this mess happens mostly in simplified publication of popular music pieces well known to the reader.
 
 Besides, chord names in notation are usually "optimized" to make them shorter. For this purpose, notes can be reordered to minimized the number of delimiters (usually '/'). Say, in "C7+5", 7th comes before 5th only to avoid extra delimiter "+5/7". Well, maybe even "57" would be clearer: some write + or &minus; after digits, some before and strongly insist on it, to match prefixed form of ♯, ♭ and ♮ in [standard scores](https://en.wikipedia.org/wiki/Musical_notation#Modern_staff_notation). It creates yet another kind of ambiguity.
 
-I mention all that primarily to note that in the [application](#heading.isomorphic-midi20keyboard20application) UI, chord names appear only in one place: chord presets.
+I mention all that primarily to note that in the [application](#heading-isomorphic-midi-keyboard-application) UI, chord names appear only in one place: chord presets.
 
 ### Chord Presets
 
-The purpose of the chord names in presets is somewhat different from the usual use of the chord notation. So, my naming is a bit different from what people [usually write](#heading.chord-names) in chord notation; for example, '/' delimiters are used to avoid ambiguity in reading, even though actually selected chord can also be read on the left of the presets. 
+The purpose of the chord names in presets is somewhat different from the usual use of the chord notation. So, my naming is a bit different from what people [usually write](#heading-chord-names) in chord notation; for example, '/' delimiters are used to avoid ambiguity in reading, even though actually selected chord can also be read on the left of the presets. 
 
-I hope the part of the UI for chord presets is [self-explaining](#image.chords-ui).
+I hope the part of the UI for chord presets is [self-explaining](#image-chords-ui).
 
 I only want to explain the order of chords in the default presets. The purpose of presets is quick selection of chords to be automatically played with "Ctrl" key. For example, in a typical minor chord progression, the user can keep preset selection at "minor" signature, quickly shifting to "7" or "major", which are the most used in such progressions. The user can quickly modify the presets to the current needs, and this choice persists between the sessions in the application runtime. 
 
@@ -560,9 +560,9 @@ Some further ideas include
 - User-defined keyboard layouts. It can be useful for the users using the keyboard with physical layout different from en-US kinds of keyboard.  
 - Keyboard split. It would be possible to define one or more areas on the keyboard to be set up separately: for each area, the choice of instrument, volumes and transposition could be different.
 - MIDI recording. I'm not sure if it would be a valuable option or not. After all, the application cannot work as a serious musical instrument to really perform on it. Rather, it can be used as learning and experimenting tool.
-- Covering other alternative tone systems, such as [19-TET](https://en.wikipedia.org/wiki/19_equal_temperament) or [31-TET](https://en.wikipedia.org/wiki/31_equal_temperament) would be extremely interesting and fruitful (presently implemented; see [below](#heading.future-is-already-here)).
+- Covering other alternative tone systems, such as [19-TET](https://en.wikipedia.org/wiki/19_equal_temperament) or [31-TET](https://en.wikipedia.org/wiki/31_equal_temperament) would be extremely interesting and fruitful (presently implemented; see [below](#heading-future-is-already-here)).
 - Another [microtonal](https://en.wikipedia.org/wiki/Microtonal_music) approach would be using [dynamic tonality](https://en.wikipedia.org/wiki/Dynamic_tonality) changing explicitly (with some additional controls) or on some triggers (appearance of certain chord or sequence during musical motion) based on preset created before performing.
-- Instead of .NET, using Web browser-implemented [Web Audio API](https://www.w3.org/TR/webaudio), for ultimate cross-platform compatibility (presently implemented; see [below](#heading.future-is-already-here)).
+- Instead of .NET, using Web browser-implemented [Web Audio API](https://www.w3.org/TR/webaudio), for ultimate cross-platform compatibility (presently implemented; see [below](#heading-future-is-already-here)).
 
 ### Future is Already Here
 
