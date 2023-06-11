@@ -1,4 +1,4 @@
-Musical Study with Isomorphic Computer Keyboard{title}
+﻿Musical Study with Isomorphic Computer Keyboard{title}
 
 [*Sergey A Kryukov*](https://www.SAKryukov.org)
 
@@ -33,9 +33,10 @@ A computer keyboard can be turned into an isomorphic musical instrument, to help
 
 This is the second article in the series dedicated to musical study using specialized keyboards based on the computer keyboard:
 
-1. Present article
+1. *Present article*
 2. *[Microtonal Music Study with Chromatic Lattice Keyboard](https://www.codeproject.com/Articles/1204180/Microtonal-Music-Study-Chromatic-Lattice-Keyboard)*
 3. *[Sound Builder, Web Audio Synthesizer](https://www.codeproject.com/Articles/5268512/Sound-Builder)*
+4. *[Multitouch Support for Ten-Finger Playing](https://www.codeproject.com/Articles/5362252/Multitouch-Support)*
 
 ## Insights
 
